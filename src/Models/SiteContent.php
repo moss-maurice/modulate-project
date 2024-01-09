@@ -3,7 +3,7 @@
 namespace testModule\Models;
 
 use Illuminate\Http\Request;
-use mmaurice\modulatte\Traits\Model\ModuleExtensionTrait;
+use mmaurice\modulatte\Support\Traits\Model\ModuleExtensionTrait;
 
 class SiteContent extends \EvolutionCMS\Main\Components\Models\SiteContent
 {

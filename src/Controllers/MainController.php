@@ -4,7 +4,7 @@ namespace testModule\Controllers;
 
 use testModule\Models\Countries;
 
-class MainController extends \mmaurice\modulatte\Controllers\CrudController
+class MainController extends \mmaurice\modulatte\Support\Controllers\CrudController
 {
     protected $position = 0;
     protected $slug = 'main';

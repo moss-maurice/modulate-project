@@ -2,7 +2,7 @@
 
 namespace testModule;
 
-class Module extends \mmaurice\modulatte\Module
+class Module extends \mmaurice\modulatte\Support\Module
 {
     # do nothing!
 }
