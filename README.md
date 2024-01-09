@@ -12,14 +12,7 @@
 
 ## Install
 
-1. Для корректной работы, необходимо добавить поддержку модулей в composer.json пакета:
-
-```sh
-root@ssh:~#: cd ~/core/custom/packages/main
-root@ssh:~/core/custom/packages/main/#: composer require mmaurice/modulatte-support
-```
-
-2. Произвести устновку базового модуля **Modulatte**:
+Произвести устновку базового модуля **Modulatte**:
 
 ```sh
 root@ssh:~/core/custom/packages/main/#: cd assets/modules
