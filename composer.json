@@ -1,0 +1,22 @@
+{
+    "name": "mmaurice/modulate-project",
+    "description": "Module generator project for Modx Evolution 3.x",
+    "license": "GPL-3.0-only",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Moss Maurice",
+            "email": "kreexus@yandex.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.3"
+    },
+    "require_dev": {},
+    "optimize-autoloader": true,
+    "autoload": {},
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "extra": {}
+}
