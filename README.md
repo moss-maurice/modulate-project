@@ -16,7 +16,7 @@
 
 ```sh
 root@ssh:~/core/custom/packages/main/#: cd assets/modules
-root@ssh:~/core/custom/packages/main/assets/modules/#: create-project mmaurice/modulate-project my-module-name
+root@ssh:~/core/custom/packages/main/assets/modules/#: create-project mmaurice/modulatte-project my-module-name
 ```
 
 ## Package Folders
