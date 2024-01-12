@@ -6,4 +6,4 @@ $modulePath = realpath(MODX_BASE_PATH . '/core/custom/packages/main/assets/modul
 
 include_once realpath("{$modulePath}/bootstrap.php");
 
-Bootstrap::runModule();
+return Bootstrap::initModules();

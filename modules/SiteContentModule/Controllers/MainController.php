@@ -1,8 +1,8 @@
 <?php
 
-namespace testModule\Controllers;
+namespace Modulatte\Module\SiteContentModule\Controllers;
 
-use testModule\Models\Countries;
+use Modulatte\Module\SiteContentModule\Models\SiteContent;
 
 class MainController extends \mmaurice\modulatte\Support\Controllers\CrudController
 {

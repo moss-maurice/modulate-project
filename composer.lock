@@ -1,0 +1,61 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "37785069c559901de40e4437b0c32f6d",
+    "packages": [
+        {
+            "name": "mmaurice/modulatte-support",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moss-maurice/modulatte-support.git",
+                "reference": "5a1f31c1dd2197389e23dd94aa8a5b555ae03ae0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moss-maurice/modulatte-support/zipball/5a1f31c1dd2197389e23dd94aa8a5b555ae03ae0",
+                "reference": "5a1f31c1dd2197389e23dd94aa8a5b555ae03ae0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mmaurice\\modulatte\\Support\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Moss Maurice",
+                    "email": "kreexus@yandex.ru"
+                }
+            ],
+            "description": "Module generator support for Modx Evolution 3.x",
+            "support": {
+                "issues": "https://github.com/moss-maurice/modulatte-support/issues",
+                "source": "https://github.com/moss-maurice/modulatte-support/tree/1.1.0"
+            },
+            "time": "2024-01-12T13:29:00+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.3"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

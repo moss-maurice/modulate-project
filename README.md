@@ -16,7 +16,7 @@
 
 ```sh
 root@ssh:~/core/custom/packages/main/#: cd assets/modules
-root@ssh:~/core/custom/packages/main/assets/modules/#: create-project mmaurice/modulatte-project my-module-name
+root@ssh:~/core/custom/packages/main/assets/modules/#: create-project mmaurice/modulatte-project modulatte
 ```
 
 ## Package Folders
@@ -48,7 +48,9 @@ return [
 
 Кроме этого, в каталоге `resources` допустимо создавать иные необходимые для работы приложения каталоги. Например, `images`, `fonts`, `saas`, `scss` и прочие.
 
-#### Код модуля (src)
+#### Код модулей (modules)
+
+В каталоге `modules` содержится список каталогов модулей. Обязательно с заглавной буквы
 
 В базовом исполнении каталог содержит самые важные для работы модуля файлы:
 -- `Controllers` - каталог для размещения логики контроллеров табов
@@ -77,6 +79,10 @@ return [
 #### Точка входа (index.php)
 
 Точка входа, необходимая для подключения загрузчика модуля, а так же копируется при развёртывании поставки в публичный каталог модулей
+
+#### Инициализация модулей (initialize.php)
+
+Точка входа, необходимая для инициализации загрузчика модуля
 
 ## Commands
 
