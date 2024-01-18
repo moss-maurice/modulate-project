@@ -47,6 +47,11 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
         ];
     }
 
+    public function orderFields()
+    {
+        return [];
+    }
+
     public function listFieldsClasses()
     {
         return [
@@ -85,7 +90,7 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
                     'document' => 'Документ',
                     'reference' => 'Ссылка',
                 ])->get($this->type ?? 0),
-                'class' => (collect($this->listFieldsClasses())->has('type') ? collect($this->listFieldsClasses())->get('type') : ''),
+                'class' => $this->mappedListFieldClass('type'),
             ],
         ]);
     }
@@ -98,6 +103,7 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
                 'name' => 'type',
                 'title' => collect($this->fieldsNames())->get('type'),
                 'value' => $this->type ?? true,
+                'class' => $this->mappedEditorFieldClass('type'),
                 'required' => false,
                 'list' => collect([
                     'document' => 'Документ',
@@ -120,7 +126,7 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
                     'document' => 'Документ',
                     'reference' => 'Ссылка',
                 ]),
-                'class' => (collect($this->filterFieldsClasses())->has('type') ? collect($this->filterFieldsClasses())->get('type') : ''),
+                'class' => $this->mappedFilterFieldClass('type'),
                 'comment' => '',
             ],
         ]);
@@ -136,7 +142,7 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
                     0 => 'Не опубликова',
                     1 => 'Опубликован',
                 ])->get($this->published ?? 0),
-                'class' => (collect($this->listFieldsClasses())->has('published') ? collect($this->listFieldsClasses())->get('published') : ''),
+                'class' => $this->mappedListFieldClass('published'),
             ],
         ]);
     }
@@ -149,6 +155,7 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
                 'name' => 'published',
                 'title' => collect($this->fieldsNames())->get('published'),
                 'value' => $this->published ?? true,
+                'class' => $this->mappedEditorFieldClass('published'),
                 'required' => false,
                 'list' => collect([
                     0 => 'Не опубликова',
@@ -171,7 +178,7 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
                     0 => 'Не опубликова',
                     1 => 'Опубликован',
                 ]),
-                'class' => (collect($this->filterFieldsClasses())->has('published') ? collect($this->filterFieldsClasses())->get('published') : ''),
+                'class' => $this->mappedFilterFieldClass('published'),
                 'comment' => '',
             ],
         ]);
