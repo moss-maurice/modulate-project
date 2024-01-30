@@ -2,7 +2,6 @@
 
 namespace Modulatte\Module\SiteContentModule\Models;
 
-use Illuminate\Http\Request;
 use mmaurice\modulatte\Support\Traits\Model\ModuleExtensionTrait;
 
 class SiteContent extends \EvolutionCMS\Models\SiteContent
@@ -101,7 +100,7 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
             'template' => 'partials.builder.form.fields.inputSelect',
             'fields' => [
                 'name' => 'type',
-                'title' => collect($this->fieldsNames())->get('type'),
+                'title' => $this->mappedFieldName('type'),
                 'value' => $this->type ?? true,
                 'class' => $this->mappedEditorFieldClass('type'),
                 'required' => false,
@@ -120,8 +119,8 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
             'template' => 'partials.builder.filter.fields.inputSelect',
             'fields' => [
                 'name' => 'type',
-                'title' => collect($this->fieldsNames())->get('type'),
-                'value' => Request::capture()->input('type'),
+                'title' => $this->mappedFieldName('type'),
+                'value' => $this->mappedFilterFieldValue('type'),
                 'list' => collect([
                     'document' => 'Документ',
                     'reference' => 'Ссылка',
@@ -153,7 +152,7 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
             'template' => 'partials.builder.form.fields.inputSelect',
             'fields' => [
                 'name' => 'published',
-                'title' => collect($this->fieldsNames())->get('published'),
+                'title' => $this->mappedFieldName('published'),
                 'value' => $this->published ?? true,
                 'class' => $this->mappedEditorFieldClass('published'),
                 'required' => false,
@@ -172,8 +171,8 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
             'template' => 'partials.builder.filter.fields.inputSelect',
             'fields' => [
                 'name' => 'published',
-                'title' => collect($this->fieldsNames())->get('published'),
-                'value' => Request::capture()->input('published'),
+                'title' => $this->mappedFieldName('published'),
+                'value' => $this->mappedFilterFieldValue('published'),
                 'list' => collect([
                     0 => 'Не опубликова',
                     1 => 'Опубликован',
