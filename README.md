@@ -22,22 +22,6 @@ root@ssh:~/core/custom/packages/main/assets/modules/#: create-project mmaurice/m
 
 ## Package Folders
 
-#### Конфигурация (config)
-
-Вся конфигурация модуля содержится в файле `module.php` внутри каталога `config`. Пример содержимого файла:
-
-```php
-return [
-
-    // Название модуля
-    'name' => 'Тест-модуль',
-
-    // Иконка модуля
-    'icon' => 'fa fa-atlas',
-
-];
-```
-
 #### Ресурсы (resources)
 
 Каталог ресурсов содержит в себе другие подкаталоги:
@@ -93,7 +77,34 @@ return [
 
 #### Базовое применение
 
-Реализация простейшего применения представлена в каталоге SiteContentModule модуля (`~/modules/SiteContentModule/`). Для начала необходимо завести контроллер (MainController - контроллер по-умолчанию и его наличие обязательно), в котором достаточно перечислить следующие параметры:
+Реализация простейшего применения представлена в каталоге SiteContentModule модуля (`~/modules/SiteContentModule/`). Для начала необходимо завести файл модуля:
+
+```php
+namespace Modulatte\Module\SiteContentModule;
+
+class Module extends \mmaurice\modulatte\Support\Module
+{
+    // Наименование модуля
+    public function name()
+    {
+        return 'Справочник ресурсов';
+    }
+
+    // Основная иконка модуля
+    public function icon()
+    {
+        return 'fa fa-folder-open';
+    }
+
+    // Номер позиции в общем списке модулей
+    public function position()
+    {
+        return 10;
+    }
+}
+```
+
+Далее, необходимо создать контроллер (MainController - контроллер по-умолчанию и его наличие обязательно), в котором достаточно перечислить следующие параметры:
 
 ```php
 namespace Modulatte\Module\SiteContentModule\Controllers;
