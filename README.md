@@ -135,6 +135,10 @@ class MainController extends \mmaurice\modulatte\Support\Controllers\CrudControl
     // Ограничение в выодаче результатов на страницу пагинации (не обязательно)
     // 0 для отключения. По-умолчанию, 25
     protected $pagination = 25;
+
+    // Набор alias для выводимых в списочном интерфейсе кнопок в controlBar. По-умолчанию: edit, delete
+    // Кнопки выводятся в перечисленном порядке. Поддерживается кастомизация. (не обязательно)
+    protected $controlButtons = ['edit', 'delete'];
 }
 ```
 
