@@ -49,6 +49,7 @@ class Bootstrap
             ->values()
             ->map(function ($item) {
                 return [
+                    'id' => md5($item->name()),
                     'slug' => $item->slug(),
                     'name' => $item->name(),
                     'path' => realpath(dirname(__FILE__) . '/index.php'),
