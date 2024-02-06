@@ -154,6 +154,13 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
 {
     use ModuleExtensionTrait;
 
+    // Наименование PK-поля
+    // (не обязательно, по-умолчанию, id)
+    public static function pkField()
+    {
+        return 'id';
+    }
+
     // Массив наименований полей
     public function fieldsNames()
     {
@@ -167,14 +174,14 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
     }
 
     // Массив полей, добавляемых автоматически в начало таблицы общего списка
-    // (по-умолчанию, только id)
+    // (не обязательно, по-умолчанию, только id)
     public function prependListFields()
     {
         return ['id'];
     }
 
     // Массив полей, добавляемых автоматически в конец таблицы общего списка
-    // (по-умолчанию, не требуется)
+    // (не обязательно, по-умолчанию, не требуется)
     public function appendListFields()
     {
         return [];
@@ -187,14 +194,14 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
     }
 
     // Массив полей, добавляемых автоматически в начало интерфейса создания\изменения записи
-    // (по-умолчанию, только id)
+    // (не обязательно, по-умолчанию, только id)
     public function prependItemFields()
     {
         return ['id'];
     }
 
     // Массив полей, добавляемых автоматически в конец интерфейса создания\изменения записи
-    // (по-умолчанию, только created_at и updated_at)
+    // (не обязательно, по-умолчанию, только created_at и updated_at)
     public function appendItemFields()
     {
         return ['created_at', 'updated_at'];
