@@ -268,6 +268,37 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
 -- `update()` - метод обновления записи
 -- `delete()` - метод удаления записи
 
+Все они имеют методы с подключаемой логикой. На случай, если не требуется кастомизация внешнего вида, но требуется кастомизация логики:
+
+```php
+    use Illuminate\Database\Eloquent\Model;
+
+    protected function onList()
+    {
+        // ...
+    }
+
+    protected function onCreate()
+    {
+        // ...
+    }
+
+    protected function onUpdate(Model $item)
+    {
+        // ...
+    }
+
+    protected function onClone(Model $item)
+    {
+        // ...
+    }
+
+    protected function onDelete(Model $item)
+    {
+        // ...
+    }
+```
+
 Ознакомившись с исходным кодом этих методов, можно кастомизировать каждое поведение модуля.
 
 ##### Action Bar
@@ -327,6 +358,56 @@ class SiteContent extends \EvolutionCMS\Models\SiteContent
 ```
 
 Конкретные примеры реализации необходимо посмотреть в исходном коде. По аналогии можно расширить перечень полей
+
+##### Group Bar
+
+В списочном интерфейсе можно управлять отображением элементов групповой выборки нескольких строк. Для активации этой фичи, необходимо в контроллере объявить какие действия будут доступны для списков, а так же можно кастомизировать вывод:
+
+```php
+    protected $groupBar = ['clone', 'delete'];
+
+    // Кастомизация groupBar для контрола clone
+    public function groupBarClone()
+    {
+        // ...
+    }
+
+    // Кастомизация groupBar для контрола delete
+    public function groupBarDelete()
+    {
+        // ...
+    }
+```
+
+А так же можно кастомизировать действия или переопределить их логическую часть:
+
+```php
+    protected function onGroupClone()
+    {
+        // ...
+    }
+
+    protected function onGroupDelete()
+    {
+        // ...
+    }
+
+    public function groupClone()
+    {
+        // ...
+    }
+
+    public function groupDelete()
+    {
+        // ...
+    }
+```
+
+Однако, может потребоваться и деактивация этой фичи. Тогда достаточно просто очистить массив доступных для фичи действия:
+
+```php
+    protected $controlButtons = [];
+```
 
 ##### Кастомизация вывода полей
 
